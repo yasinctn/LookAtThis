@@ -13,11 +13,15 @@ struct ContentView: View {
     @State private var imageScale: CGFloat = 1.0
     @State private var imageOffset: CGSize = .zero
     
+    
     var body: some View {
         
         NavigationStack{
             
             ZStack{
+                Color.clear
+                
+                
                 Image("Porsche", bundle: nil)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
@@ -26,17 +30,19 @@ struct ContentView: View {
                     .opacity(isAnimating ? 1 : 0)
                     .navigationTitle("Pinch & Zoom")
                     .navigationBarTitleDisplayMode(.inline)
-                    .offset(CGSize(width: imageOffset.width, height: imageOffset.height))
+                    .offset(x: imageOffset.width, y: imageOffset.height)
                     .scaleEffect(imageScale)
+                    .padding()
                 //MARK: - Double Tap Gesture
                     .onTapGesture(count: 2, perform: {
                         if imageScale == 1 {
                             withAnimation(.spring) {
-                                imageScale = 5
+                                imageScale = 4
                             }
                         } else {
                             withAnimation(.spring) {
                                 imageScale = 1
+                                imageOffset = .zero
                             }
                         }
                     })
@@ -45,9 +51,10 @@ struct ContentView: View {
                 
                     .gesture(
                         DragGesture()
-                        .onChanged { changedValue in
+                        .onChanged { value in
                             withAnimation(.linear(duration: 1)) {
-                                imageOffset = changedValue.translation
+                                imageOffset = value.translation
+                                
                             }
                         }
                         .onEnded { _ in
@@ -67,7 +74,9 @@ struct ContentView: View {
                 isAnimating = true
                 }
             })
-             
+            .overlay(alignment: .top) {
+                InfoPanelView(offset: imageOffset, scale: imageScale)
+            }
             
         }
     }
