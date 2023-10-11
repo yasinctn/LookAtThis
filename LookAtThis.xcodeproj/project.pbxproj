@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B07C55FC2AD2BA8900A899C8 /* ControlButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07C55FB2AD2BA8900A899C8 /* ControlButtonView.swift */; };
 		B08F8B7F2AD16C3A0010A152 /* LookAtThisApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08F8B7E2AD16C3A0010A152 /* LookAtThisApp.swift */; };
 		B08F8B812AD16C3A0010A152 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08F8B802AD16C3A0010A152 /* ContentView.swift */; };
 		B08F8B832AD16C3B0010A152 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B08F8B822AD16C3B0010A152 /* Assets.xcassets */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B07C55FB2AD2BA8900A899C8 /* ControlButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlButtonView.swift; sourceTree = "<group>"; };
 		B08F8B7B2AD16C3A0010A152 /* LookAtThis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LookAtThis.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B08F8B7E2AD16C3A0010A152 /* LookAtThisApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookAtThisApp.swift; sourceTree = "<group>"; };
 		B08F8B802AD16C3A0010A152 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -38,6 +40,7 @@
 			isa = PBXGroup;
 			children = (
 				B08F8B8C2AD1BDE30010A152 /* InfoPanelView.swift */,
+				B07C55FB2AD2BA8900A899C8 /* ControlButtonView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -158,6 +161,7 @@
 			files = (
 				B08F8B812AD16C3A0010A152 /* ContentView.swift in Sources */,
 				B08F8B7F2AD16C3A0010A152 /* LookAtThisApp.swift in Sources */,
+				B07C55FC2AD2BA8900A899C8 /* ControlButtonView.swift in Sources */,
 				B08F8B8D2AD1BDE30010A152 /* InfoPanelView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -298,6 +302,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -327,6 +332,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
