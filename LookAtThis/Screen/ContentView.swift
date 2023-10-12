@@ -69,6 +69,29 @@ struct ContentView: View {
                                 }
                                 
                             })
+                
+                // MARK: - Magnification Gesture
+                    .gesture(
+                        MagnificationGesture()
+                            .onChanged({ value in
+                                withAnimation(.linear) {
+                                    if imageScale <= 5 {
+                                        imageScale = value
+                                    }else {
+                                        imageScale = 5
+                                    }
+                                }
+                            })
+                            .onEnded({ _ in
+                                withAnimation {
+                                    if imageScale > 5 {
+                                        imageScale = 5
+                                    } else if imageScale < 1 {
+                                        resetImageState()
+                                    }
+                                }
+                            })
+                    )
             }
             
             .onAppear(perform:{
@@ -135,4 +158,5 @@ struct ContentView: View {
 #Preview {
     ContentView()
         .preferredColorScheme(.dark)
+        
 }
