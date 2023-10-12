@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     
     @State private var isAnimating = false
+    @State private var isDrawerOpen = false
     @State private var imageScale: CGFloat = 1.0
     @State private var imageOffset: CGSize = .zero
     
@@ -92,6 +93,31 @@ struct ContentView: View {
                                 }
                             })
                     )
+                
+                //MARK: - Drawer
+                
+                .overlay(alignment: .topTrailing) {
+                    
+                    HStack {
+                        Image(systemName: isDrawerOpen ? "chevron.compact.right" : "chevron.compact.left")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 15, height: 50)
+                            .padding(12)
+                            .foregroundStyle(.secondary)
+                            .onTapGesture {
+                                withAnimation(.easeOut) {
+                                    isDrawerOpen.toggle()
+                                }
+                            }
+                        Spacer()
+                    }
+                    .frame(width: 270)
+                    .background(.ultraThinMaterial)
+                    .clipShape(.rect(cornerRadius: 17))
+                    .offset(x: isDrawerOpen ? 20 : 230)
+                    
+                }
             }
             
             .onAppear(perform:{
