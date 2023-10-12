@@ -14,7 +14,7 @@ struct ControlButtonView: View {
     var body: some View {
         Image(systemName: icon)
             .font(.system(size: 30))
-            
+            .foregroundStyle(.white)
         
     }
 }
